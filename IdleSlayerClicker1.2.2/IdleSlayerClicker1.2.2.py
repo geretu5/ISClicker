@@ -13,17 +13,12 @@ craft=0
 MinionsMas = ['Scelet.png', 'WhiteKnight.png', 'JijaMutant.png', 'DarkWizard.png', 'StoneGolem.png', 'Ninja.png']
 
 def move():
-    pyautogui.moveTo(1070, 980)
-    pyautogui.click()
-    pyautogui.moveTo(950, 20)
-    pyautogui.click()
-    pyautogui.moveTo(1070, 850)
-    pyautogui.click()
-    pyautogui.moveTo(1635, 175)
-    pyautogui.click()
-    pyautogui.moveTo(5, 5)
+    pyautogui.click(1070, 980)
+    pyautogui.click(950, 20)
+    pyautogui.click(1070, 850)
+    pyautogui.click(1635, 175)
     for i in range(5):
-        pyautogui.click()
+        pyautogui.click(5, 5)
 
 def slides():
     if (pyautogui.locateCenterOnScreen('SliderToLeft.png', confidence=0.7, region=(0,0, 1920, 1080))):
@@ -37,22 +32,16 @@ def slides():
 
 def crafting():
     global craft
-    pyautogui.moveTo(1870, 550)
-    pyautogui.click()
+    pyautogui.click(1870, 550)
 
 def eggs():
-    pyautogui.moveTo(260,110)
-    pyautogui.click()
+    pyautogui.click(260,110)
     sleep(0.1)
-    pyautogui.moveTo(390, 990)
-    pyautogui.click()
-    pyautogui.moveTo(720, 560)
-    pyautogui.click()
+    pyautogui.click(390, 990)
+    pyautogui.click(720, 560)
     for i in range(100):
-        pyautogui.moveTo(610, 755)
-        pyautogui.click()
-        pyautogui.moveTo(975, 845)
-        pyautogui.click()
+        pyautogui.click(610, 755)
+        pyautogui.click(975, 845)
 
 def BasicChest():
     x, y = pyautogui.locateCenterOnScreen('Chest.png', confidence=0.9, region=(0,0, 1920, 1080))
@@ -119,11 +108,9 @@ def GodPoints():
 
 def minions():
     if (pyautogui.locateCenterOnScreen('Minions.png', confidence=0.99, region=(0, 0, 1920, 1080))):
-        pyautogui.moveTo(150, 110)
-        pyautogui.click()
+        pyautogui.click(150, 110)
         sleep(0.5)
-        pyautogui.moveTo(480, 995)
-        pyautogui.click()
+        pyautogui.click(480, 995)
         sleep(0.5)
         if (pyautogui.locateCenterOnScreen('MinionsDailyBonus.png', confidence=0.7, region=(0, 0, 1920, 1080))):
             try:
@@ -141,15 +128,13 @@ def minions():
             except:
                 pass
         GodPoints()
-        pyautogui.moveTo(840, 990)
-        pyautogui.click()
+        pyautogui.click(840, 990)
 
 while True:
     craft=0
     if (keyboard.is_pressed('f1')):
         while True:
-            pyautogui.moveTo(1920 / 2, 1080 / 2)
-            pyautogui.rightClick()
+            pyautogui.rightClick(1920 / 2, 1080 / 2)
             move()
             if(counter == 6):
                 chests()
